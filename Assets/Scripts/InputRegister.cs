@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InputRegister : InputActions
+public class InputRegister : MonoBehaviour
 {
     public UnityEvent _actionListener;
 
@@ -17,7 +17,7 @@ public class InputRegister : InputActions
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _actionListener.Invoke();
+           _actionListener.Invoke();
         }
     }
 }
