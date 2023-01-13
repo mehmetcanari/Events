@@ -10,7 +10,12 @@ public class InputRegister : MonoBehaviour
 
     private void Update()
     {
-        OnClick();
+        switch (GameStates.Instance._gameStates)
+        {
+            case States.Play:
+                OnClick();
+                break;
+        }
     }
 
     private void OnClick()

@@ -17,6 +17,8 @@ public class Door : MonoBehaviour
     {
         _doorHandle.DORotate(new Vector3(0, 0, -45f), _interactSpeed).SetEase(_easing).OnComplete(() =>
         {
+            _doorHandle.DORotate(Vector3.zero, _interactSpeed).SetEase(_easing);
+
             _door.DORotate(new Vector3(0, -45f, 0), _interactSpeed).SetEase(_easing);
         });
     }
