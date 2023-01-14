@@ -21,23 +21,14 @@ public class GameStates : MonoBehaviour
     }
 
 
-    public void ChangeState(int _stateIndex)
+    public void ChangeState(States _desiredState)
     {
-        switch (_stateIndex)
-        {
-            case 1:
-                _gameStates = States.Play;
-                break;
-
-            case 0:
-                _gameStates = States.Finish;
-                break;
-        }
+        _gameStates = _desiredState;
     }
 }
 
 public enum States
 {
-    Play,
-    Finish
+    IsClosed,
+    IsOpened
 }

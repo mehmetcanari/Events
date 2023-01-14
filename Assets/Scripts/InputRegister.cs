@@ -10,19 +10,14 @@ public class InputRegister : MonoBehaviour
 
     private void Update()
     {
-        switch (GameStates.Instance._gameStates)
-        {
-            case States.Play:
-                OnClick();
-                break;
-        }
+        OnClick();
     }
 
     private void OnClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
-           _actionListener.Invoke();
+            _actionListener.Invoke();
         }
     }
 }
