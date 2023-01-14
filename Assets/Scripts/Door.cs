@@ -34,14 +34,9 @@ public class Door : MonoBehaviour
     {
         if (GameStates.Instance._gameStates == States.IsOpened)
         {
-            _doorHandle.DORotate(new Vector3(0, 0, -45f), _interactSpeed).SetEase(_easing).OnComplete(() =>
+            _door.DORotate(Vector3.zero, _interactSpeed).SetEase(_easing).OnComplete(() =>
             {
-                _doorHandle.DORotate(Vector3.zero, _interactSpeed).SetEase(_easing);
-
-                _door.DORotate(Vector3.zero, _interactSpeed).SetEase(_easing).OnComplete(() =>
-                {
-                    GameStates.Instance.ChangeState(States.IsClosed);
-                });
+                GameStates.Instance.ChangeState(States.IsClosed);
             });
         }
     }
